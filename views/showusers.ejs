@@ -5,7 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Show Users</title>
 </head>
+<style>
+    table, tr,td,th{
+        border: 1px solid black ;
+    }
+</style>
 <body>
-    
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Email</th>
+            <th>Username</th>
+        </tr>
+      <%  for(user of users){ %>
+            <td>
+                <td><%= user.id %></td>
+                <td><%= user.email %></td>
+                <td><%= user.username %></td>
+                <td>
+                <form method="get" action="/user/<%=user.id%>/edit">
+                    <button>Edit Username</button>
+                </form>
+                </td>
+            </tr>
+   <%  }%>
+    </table>
 </body>
 </html>
