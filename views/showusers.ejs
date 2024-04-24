@@ -6,7 +6,7 @@
     <title>Show Users</title>
 </head>
 <style>
-    table, tr,td,th{
+    table, th, td{
         border: 1px solid black ;
     }
 </style>
@@ -17,18 +17,21 @@
             <th>Email</th>
             <th>Username</th>
         </tr>
+        
       <%  for(user of users){ %>
-            <td>
+       <tr>
+            
                 <td><%= user.id %></td>
                 <td><%= user.email %></td>
                 <td><%= user.username %></td>
+                
                 <td>
                 <form method="get" action="/user/<%=user.id%>/edit">
                     <button>Edit Username</button>
                 </form>
                 </td>
             </tr>
-   <%  }%>
+   <% }%>
     </table>
 </body>
 </html>
